@@ -55,9 +55,9 @@ class ConditionalSelectionRate(ClassificationMoment):
         # constraints, which is achieved by removing some redundant constraints.
         # Considering fewer constraints is not required for correctness, but it can dramatically
         # speed up GridSearch.
-        self.pos_basis = pd.DataFrame()
-        self.neg_basis = pd.DataFrame()
-        self.neg_basis_present = pd.Series()
+        self.pos_basis = pd.DataFrame(dtype='float64')
+        self.neg_basis = pd.DataFrame(dtype='float64')
+        self.neg_basis_present = pd.Series(dtype='boolean')
         zero_vec = pd.Series(0.0, self.index)
         i = 0
         for event_val in event_vals:
