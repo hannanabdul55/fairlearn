@@ -170,7 +170,7 @@ class _Lagrangian:
             estimator = clone(estimator=self.estimator, safe=False)
 
         oracle_call_start_time = time()
-        estimator.fit(self.X, redY, sample_weight=redW)
+        estimator.fit(self.X, redY, sample_weight=redW  )
         self.oracle_execution_times.append(time() - oracle_call_start_time)
         self.n_oracle_calls += 1
 
